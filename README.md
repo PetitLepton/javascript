@@ -1,0 +1,1 @@
+This is a small script to include a table of contents from the headings (`h2` to `h5`) in an HTML file. It's primary use is for creating the TOC when an HTML file is generated from a Jupyter notebook.  
