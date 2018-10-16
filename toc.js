@@ -35,15 +35,19 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
             // If the heading level is the same, create a new item
             let liNode = document.createElement('LI');
+            const text = currentHeading.firstChild.wholeText;
             if (currentHeading.hasAttribute('id')) {
                 let link = document.createElement('A');
                 link.setAttribute('href', '#' + currentHeading.getAttribute('id'));
-                link.appendChild(document.createTextNode(currentHeading.textContent))
+                link.appendChild(document.createTextNode(text))
                 liNode.appendChild(link);
             } else {
-                liNode.appendChild(document.createTextNode(currentHeading.textContent));
+                liNode.appendChild(document.createTextNode(text));
             }
             cursorNode.appendChild(liNode);
         }
     );
+    if (!headings.length) {
+        document.getElementById('toc-title').style.display = 'none'
+    };
 });
